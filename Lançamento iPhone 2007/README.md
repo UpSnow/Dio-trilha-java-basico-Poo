@@ -1,18 +1,30 @@
-## Getting Started
+## UML De Classe
+ No projeto Dio, foi necessário fazer um diagrama UML de classes. O tema foi 'Lançamento do iPhone 2007'.
+ ## Diagrama do 'Lançamento do iPhone 2007'
+ ```mermaid
+classDiagram
+    SistemaIphone  --|> InterfaceAparelhoTefonico
+    SistemaIphone  --|> InterfaceNavegadorInternet
+    SistemaIphone  --|> InterfaceReprodutorMusical
+    TesteIphone --|> SistemaIphone
+   class TesteIphone{
+    + main(args : String[])  void
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+   }
+    class InterfaceAparelhoTefonico{
+      + IniciarCorreioVozA() void
+      + AtenderA() void
+      + LigaA(String nome) void
+    }
+    class InterfaceNavegadorInternet{
+      +AtualizarPaginaN() void
+      + AdicionarNovaAbaN() void
+      +ExibirPaginaN(String nome) void
 
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+    }
+    class InterfaceReprodutorMusical{
+      +TocarR()void
+      +PausarR() void
+      +SelecionarMusicaR(String nome) void
+    }
+```
